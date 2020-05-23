@@ -1,28 +1,36 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+     <Head></Head>
+     <div class="navs">
+        <div class="item">
+           <router-link to="/goods">商品</router-link>
+        </div>
+        <div class="item">
+           <router-link to="/ratings">评价</router-link>
+        </div>
+        <div class="item">
+           <router-link to="/seller">商家</router-link>
+        </div>
+     </div>
+     <!-- 控制显示所有一级路由 -->
+      <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Head from 'components/Head/Head.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components:{
+      Head
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped lang="stylus" rel="stylesheet/stylus">
+  #app
+    width 100%
+    height 100%
+    overflow hidden
 </style>
