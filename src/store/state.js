@@ -1,3 +1,6 @@
 export default{
-  test:"test vuex"
+  seller:{},
+  goods:[],
+  ratings:[],
+  length:5
 }

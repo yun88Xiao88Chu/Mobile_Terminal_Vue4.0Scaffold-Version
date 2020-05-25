@@ -10,13 +10,13 @@ module.exports = {
     open:true,
     before:function(app){ //app是express核心对象
       app.get('/api/seller',function (req,res) {
-          res.json({seller});
+          res.json({code:200,data:seller});
       });
       app.get('/api/goods',function (req,res) {
-          res.json({goods});
+          res.json({code:200,data:goods});
       });
       app.get('/api/ratings',function (req,res) {
-          res.json({ratings});
+          res.json({code:200,data:ratings});
       });
     }
   },
@@ -25,6 +25,7 @@ module.exports = {
         alias: {
             'pages': resolve('src/pages'),
             'components': resolve('src/components'),
+            'store': resolve('src/store'),
         }
     }
   }

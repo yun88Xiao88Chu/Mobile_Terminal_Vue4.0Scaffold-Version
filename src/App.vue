@@ -19,18 +19,42 @@
 
 <script>
 import Head from 'components/Head/Head.vue'
-
+import {GETSELLER,GETGOODS,GETRATINGS} from 'store/mutation_types.js'
+import {mapActions} from 'vuex'
 export default {
   name: 'App',
   components:{
       Head
-  }
-}
+  },
+  methods: {
+     ...mapActions([GETSELLER,GETGOODS,GETRATINGS])
+  },
+  mounted() {
+     this[GETSELLER]();
+     this[GETGOODS]();
+     this[GETRATINGS]();
+  },
+} 
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
+  @import "./assets/stylus/mixin.styl"
   #app
     width 100%
     height 100%
     overflow hidden
+    .navs
+       one-px(rgba(7,17,27,.1))
+       display flex
+       height 40px  
+       line-height 40px
+       .item
+          flex 1
+          & > a
+            width 100%
+            height 100%
+            display block
+            text-align center
+            &.active
+               color rgba(240,20,20,1) 
 </style>
